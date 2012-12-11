@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <!-- By Orinx Chen, any problem please contact orinx [at] orinx dot com -->
+    <title class="l10n" data-l10n="title">NTOU Dorm2</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="Orinx Chen">
+
+
+    <link rel="apple-touch-startup-image" sizes="768x1004" href="./img/orinx+ind.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" />
+    <link rel="apple-touch-startup-image" sizes="1024x748" href="./img/orinx+ind.png"  media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" />
+    <link rel="apple-touch-icon" href="./img/icon-128.png" />
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta property="og:image" content="http://rasengan.im/deg/img/icon-128.png" />
+
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="./script/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="./script/jquery.cookie.js"></script>
+    <script type="text/javascript" src="./script/hammer.js"></script>
+    <script type="text/javascript" src="./script/main.js"></script>
+    <script type="text/javascript" src="./script/l10n.js"></script>
+  </head>
+  <body>
+    <div id="ad">
+    </div>
+    <div class="deg">
+      <h3>National Taiwan Ocean University<br /> Dormitory water thermometer</h3>
+      <p id="dormName">Male Dormitory NO.2</p>
+      <div id="now_deg" onClick="toggle_type();" contextmenu="deg-menu">
+	<deg class="gray">loading.</deg><typ></typ><br />
+	<status>Last Update : <time>syncing</time></status>
+      </div>
+    </div>
+    <div align="center">
+      <div class="blue describ">60~70度：稍微過熱的水溫</div>
+      <div class="green describ">40~60度：完美的洗澡水溫</div>
+      <div class="red describ">24~40度：過冷，請稍候在試</div>
+    </div>
+    <div style="height:8px;">&nbsp;</div>
+    <div class="footer">
+    <p>By : <a href="http://orinx.com" target="blank">Orin Chen</a> / <a id="install-app" herf="#" onclick="navigator.mozApps.install(manifest_url); return false;">Install This App</a></p>
+    </div>
+  </body>
+  <menu type="context" id="deg-menu">
+    <menuitem label="Toggle ℃ & ℉" onclick="toggle_type();"></menuitem>
+  </menu>
+</html>
