@@ -9,7 +9,7 @@ $(function(){
   if (typeof($.cookie('dormIndex')) == 'undefined' || $.cookie('dormIndex') == null){
     $.cookie('dormIndex',1);
   }
-  dormIndex = $.cookie('dormIndex');
+  dormIndex = parseInt($.cookie('dormIndex'));
   switch_dorm('update');
   setInterval( function(){ main() }, 3000);
   main();
