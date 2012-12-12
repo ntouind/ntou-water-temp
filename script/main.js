@@ -3,7 +3,7 @@ var now_deg = -100;
 var hammer = new Hammer(document.documentElement);
 var manifest_url = "http://rasengan.im/dorm/manifest.php";
 var dormIndex = 1;
-var dormFileList = ["./dorm1.json","./data.php","./dorm3.json"];
+var dormFileList = ["./data.php?id=0","./data.php?id=1","./data.php?id=2"];
 
 $(function(){
   if (typeof($.cookie('dormIndex')) == 'undefined' || $.cookie('dormIndex') == null){
