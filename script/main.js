@@ -5,7 +5,7 @@ var manifest_url = "http://rasengan.im/dorm/manifest.php";
 var dormIndex = 1;
 var dormName = ["dorm1","dorm2","dorm3"];
 var dormFileList = ["./data.php?id=0","./data.php?id=1","./data.php?id=2"];
-
+var retriedTimes = 3;
 $(function(){
 
   if( typeof( $.cookie('dormIndex')) == 'undefined' || $.cookie('dormIndex') == null)
@@ -29,6 +29,18 @@ function main(){
     now_deg = data.deg;
     update_deg();
     update_time();
+  }).success ( function(){
+    retriedTimes = 0;
+  }).error ( function(){
+
+    retriedTimes++ ;
+
+    if( retriedTimes > 3 ){
+
+      now_deg=-100;
+      update_deg();
+      $("#now_deg time").html('no network connection')
+    }
   });
 
 }
