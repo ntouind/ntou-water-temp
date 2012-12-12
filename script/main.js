@@ -3,7 +3,7 @@ var now_deg = -100;
 var hammer = new Hammer(document.documentElement);
 var manifest_url = "http://rasengan.im/dorm/manifest.php";
 var dormIndex = 1;
-var dormFileList = ["./dorm1.json","./dorm2.json","./dorm3.json"];
+var dormFileList = ["./dorm1.json","./data.php","./dorm3.json"];
 
 $(function(){
   if (typeof($.cookie('dormIndex')) == 'undefined' || $.cookie('dormIndex') == null){
@@ -11,8 +11,8 @@ $(function(){
   }
   dormIndex = $.cookie('dormIndex');
   switch_dorm('update');
-  main();
   setInterval( function(){ main() }, 3000);
+  main();
 });
 
 function main(){
