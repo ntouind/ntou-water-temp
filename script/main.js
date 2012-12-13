@@ -8,6 +8,7 @@ var dormFileList = ["./data.php?id=0","./data.php?id=1","./data.php?id=2"];
 var retriedTimes = 3;
 $(function(){
 
+  setInterval( function(){ main() }, 3000);
   if( typeof( $.cookie('dormIndex')) == 'undefined' || $.cookie('dormIndex') == null)
     $.cookie( 'dormIndex', 1);
   dormIndex = parseInt($.cookie('dormIndex'));
@@ -18,7 +19,6 @@ $(function(){
         dormIndex = i;
 
   switch_dorm('update');
-  setInterval( function(){ main() }, 3000);
   main();
 
 });
@@ -35,7 +35,7 @@ function main(){
 
     retriedTimes++ ;
 
-    if( retriedTimes > 3 ){
+    if( retriedTimes > 4 ){
 
       now_deg=-100;
       update_deg();
