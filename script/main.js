@@ -1,7 +1,7 @@
 var deg_toggle = false; //true = of false = oc
 var now_deg = -100;
 var hammer = new Hammer( document.documentElement );
-var manifest_url = "http://rasengan.im/dorm/manifest.php";
+var manifest_url = "http://rasengan.im/dorm/install.webapp";
 var dormIndex = 1;
 var dormName = ["dorm1","dorm2","dorm3"];
 var dormFileList = ["./data.php?id=0","./data.php?id=1","./data.php?id=2"];
@@ -9,6 +9,7 @@ var retriedTimes = 3;
 $(function(){
 
   setInterval( function(){ main() }, 3000);
+
   if( typeof( $.cookie('dormIndex')) == 'undefined' || $.cookie('dormIndex') == null)
     $.cookie( 'dormIndex', 1);
   dormIndex = parseInt($.cookie('dormIndex'));
@@ -19,6 +20,7 @@ $(function(){
         dormIndex = i;
 
   switch_dorm('update');
+
   main();
 
 });
